@@ -77,7 +77,7 @@ class FairseqWav2Vec2(nn.Module):
         self.freeze = freeze
         self.output_norm = output_norm
         if self.freeze:
-            model.eval()
+            self.model.eval()
 
     def forward(self, wav):
         """Takes an input waveform and return its corresponding wav2vec encoding.
@@ -159,7 +159,7 @@ class FairseqWav2Vec1(nn.Module):
         self.model = model
         self.model = self.model[0]
         if self.freeze:
-            model.eval()
+            self.model.eval()
 
     def forward(self, wav):
         """Takes an input waveform and return its corresponding wav2vec encoding.
